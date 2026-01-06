@@ -2,7 +2,7 @@
 
 A powerful desktop calculator application built with **C++** and **Qt 6 Framework**. This project implements the **Shunting Yard Algorithm** which is taught by Mr. Le Ngoc Thanh - HCMUS - VNU in Fundamental of Programming class to handle mathematical expressions with operator precedence, parentheses, and trigonometric functions.
 
-![App Screenshot] (./Github_img/Screenshot 2026-01-06 191216.png) 
+![App Screenshot] (Github_img/Screenshot 2026-01-06 191216.png) 
 ## ✨ Features
 
 * **Operands:** Just handling integers, will be upgraded later
