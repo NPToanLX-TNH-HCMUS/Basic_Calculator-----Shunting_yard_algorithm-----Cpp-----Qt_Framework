@@ -1,6 +1,6 @@
 # 🧮 Basic Calculator (Written by Gemini 2.5 Pro ^v^)
 
-A powerful desktop calculator application built with **C++** and **Qt 6 Framework**. This project implements the **Shunting Yard Algorithm** which is taught by Mr. Le Ngoc Thanh - HCMUS - VNU in Fundamental of Programming class to handle mathematical expressions.
+A powerful desktop calculator application built with **C++** and **Qt 6 Framework**. This project implements the **Shunting Yard Algorithm** to handle mathematical expressions.
 
 ![App Screenshot](Github_img/Screenshot%202026-01-06%20191216.png)
 ## ✨ Features
