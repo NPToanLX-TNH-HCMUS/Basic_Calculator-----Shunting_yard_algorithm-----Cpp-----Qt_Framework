@@ -19,8 +19,7 @@ using namespace std;
 // cout << "\t\t********************* Special Thanks to Mr. Le Ngoc Thanh - HCMUS - VNU ***************" << endl;
 // cout << "\t\t******************************** Gemini 2.5 Pro Model *********************************" << endl;
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     ui->btn_equal->setShortcut(QKeySequence(Qt::Key_Return));
@@ -185,14 +184,54 @@ QString MainWindow::calculate(string s)
                 }
 
                 // Binary Operators:
+                // Binary Operators handling:
                 else
                 {
-                    while (!Sign.empty() && Sign.top() != '(' && precedence(Sign.top()) >= precedence(ch))
+                    while (!Sign.empty() && Sign.top() != '(')
                     {
-                        Postfix.push(Sign.top());
-                        Postfix.push(' ');
-                        Sign.pop();
+                        char top = Sign.top();
+                        long long topPrec = precedence(top);
+                        long long currPrec = precedence(ch);
+
+                        // Special handling for the Exponentiation operator '^'
+                        // Power operator is Right-Associative (e.g., 5^3^2 = 5^(3^2))
+                        if (ch == '^')
+                        {
+                            /* For Right-Associative operators:
+               Only pop from stack if the operator on top has STRICTLY HIGHER precedence.
+               If top is also '^', we do NOT pop it because the new '^' must be evaluated first.
+            */
+                            if (topPrec > currPrec)
+                            {
+                                Postfix.push(top);
+                                Postfix.push(' ');
+                                Sign.pop();
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        // Handling for Left-Associative operators (+, -, *, /)
+                        else
+                        {
+                            /* For Left-Associative operators:
+               Pop from stack if the operator on top has HIGHER or EQUAL precedence.
+               This ensures left-to-right evaluation (e.g., 5-3-1 = (5-3)-1).
+            */
+                            if (topPrec >= currPrec)
+                            {
+                                Postfix.push(top);
+                                Postfix.push(' ');
+                                Sign.pop();
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
                     }
+                    // Push the current operator onto the stack
                     Sign.push(ch);
                     maybeUnary = true;
                 }
@@ -389,11 +428,11 @@ void MainWindow::on_btn_equal_clicked()
 void MainWindow::on_btn_backspace_clicked()
 {
     QString text = ui->displayScreen->text();
-    if (text.isEmpty()) return;
+    if (text.isEmpty())
+        return;
     text.chop(1);
     ui->displayScreen->setText(text);
 }
-
 
 //======================================== THE END =====================================
 //========================================== NPT =========================================
