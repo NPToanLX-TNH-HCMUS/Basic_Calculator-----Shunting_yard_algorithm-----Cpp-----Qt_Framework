@@ -1,4 +1,4 @@
-# 🧮 Basic Calculator (Written by Gemini 2.5 Pro ^v^)
+# 🧮 Basic Calculator (Written by Gemini 3.0 Pro ^v^)
 
 A powerful desktop calculator application built with **C++** and **Qt 6 Framework**. This project implements the **Shunting Yard Algorithm** to handle mathematical expressions.
 
