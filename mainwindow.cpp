@@ -16,8 +16,7 @@ using namespace std;
 // cout << "\t\t***** Operations: + - * / ! ^ sin cos tan ln ------ Numbers: Just integer/long long ***" << endl;
 // cout << "\t\t************************ Enter exit or quit to end the calculator *********************" << endl;
 // cout << "\t\t*********************** Idea: SHUNTING YARD (Reverse Polish notation) *****************" << endl;
-// cout << "\t\t********************* Special Thanks to Mr. Le Ngoc Thanh - HCMUS - VNU ***************" << endl;
-// cout << "\t\t******************************** Gemini 2.5 Pro Model *********************************" << endl;
+// cout << "\t\t************************************* Gemini 3.0 Pro  *********************************" << endl;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {

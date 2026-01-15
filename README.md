@@ -1,6 +1,6 @@
-# 🧮 Basic Calculator (Written by Gemini 3.0 Pro ^v^)
+# 🧮 Basic Calculator
 
-A powerful desktop calculator application built with **C++** and **Qt 6 Framework**. This project implements the **Shunting Yard Algorithm** to handle mathematical expressions.
+A basic desktop calculator application built with **C++** and **Qt 6 Framework**. This project implements the **Shunting Yard Algorithm** to handle mathematical expressions.
 
 ![App Screenshot](Github_img/Screenshot%202026-01-06%20191216.png)
 ## ✨ Features
